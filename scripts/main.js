@@ -8,7 +8,10 @@ import { CategorySelect } from "./categories/CategorySelect.js"
 import { LoginForm } from "./customers/LoginForm.js"
 import { ProductList } from "./products/ProductList.js"
 
+
 LoginForm()
 CustomerNav()
 CategorySelect()
 ProductList()
+
+

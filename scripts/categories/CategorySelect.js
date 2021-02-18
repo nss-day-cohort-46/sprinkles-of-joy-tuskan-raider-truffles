@@ -7,7 +7,9 @@ let categories = []
 
 export const CategorySelect = () => {
   getCategories()
+  .then(() =>
   categories = useCategories()
+  )
   render()
 }
 
