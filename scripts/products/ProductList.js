@@ -4,7 +4,7 @@ import { Product } from "./Product.js"
 
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".menu__items")
-
+// debugger
 let bakeryProducts = []
 let bakeryCategories = []
 
@@ -20,7 +20,7 @@ export const ProductList = () => {
 
 const render = () => {
   contentTarget.innerHTML = bakeryProducts.map(product => {
-    const productCategory = bakeryCategories.find(category => cat.id === product.categoryId)
+    const productCategory = bakeryCategories.find(category => category.id === product.categoryId)
 
     return Product(product, productCategory)
   }).join("")
