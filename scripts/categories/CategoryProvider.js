@@ -6,6 +6,8 @@ export const useCategories = () => {
   categories.slice()
 }
 
+// console.log("hey", categories)
+
 export const getCategories = () => {
   return fetch(`${bakeryAPI.baseURL}/categories`)
     .then(response => response.json())

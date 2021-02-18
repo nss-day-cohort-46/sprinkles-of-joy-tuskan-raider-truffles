@@ -14,5 +14,5 @@ LoginForm()
 CustomerNav()
 CategorySelect()
 ProductList()
-
+getProducts()
 // console.log("Hey There", getProducts())

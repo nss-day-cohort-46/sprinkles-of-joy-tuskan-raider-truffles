@@ -7,13 +7,14 @@ let categories = []
 
 export const CategorySelect = () => {
   getCategories()
-  .then(() =>
+  .then(() => {
   categories = useCategories()
-  )
-  render()
+  
+  render(categories)
+  })
 }
 
-const render = () => {
+const render = (categories) => {
   // console.log("HeyThere", categories)
   contentTarget.innerHtml = `
       <select class="dropdown" id="categorySelect">
