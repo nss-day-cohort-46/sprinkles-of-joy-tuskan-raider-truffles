@@ -9,13 +9,15 @@ let bakeryProducts = []
 let bakeryCategories = []
 
 export const ProductList = () => {
+  // debugger
   getProducts()
-    .then(getCategories)
-    .then(() => {
-      bakeryProducts = useProducts()
-      bakeryCategories = useCategories()
-      render()
-    })
+  // console.log("gp", getProducts())
+  .then(getCategories)
+  .then(() => {
+    bakeryProducts = useProducts()
+    bakeryCategories = useCategories()
+  })
+  render()
 }
 
 const render = () => {
@@ -25,3 +27,4 @@ const render = () => {
     return Product(product, productCategory)
   }).join("")
 }
+

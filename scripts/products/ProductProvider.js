@@ -7,10 +7,11 @@ export const useProducts = () => {
 }
 
 export const getProducts = () => {
-   return fetch(`${bakeryAPI.baseURL}/products`)
+  return fetch(`${bakeryAPI.baseURL}/products`)
     .then(response => response.json())
     .then(bakedGoods => {
       products = bakedGoods
     })
    
 }
+
