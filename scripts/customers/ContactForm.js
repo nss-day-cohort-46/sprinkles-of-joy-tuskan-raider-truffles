@@ -31,7 +31,6 @@ export const ContactForm = () => {
 // }
 
 eventHub.addEventListener("click", clickEvent => {
-  console.log("halp", clickEvent)
   if (clickEvent.target.id === "contactForm") {
     clickEvent.preventDefault()
     ContactForm()
