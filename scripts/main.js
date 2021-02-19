@@ -7,12 +7,12 @@ import { CustomerNav } from "./customers/CustomerNav.js"
 import { CategorySelect } from "./categories/CategorySelect.js"
 import { LoginForm } from "./customers/LoginForm.js"
 import { ProductList } from "./products/ProductList.js"
-import { getProducts } from "./products/ProductProvider.js"
+
+
 
 
 LoginForm()
 CustomerNav()
 CategorySelect()
 ProductList()
-getProducts()
-// console.log("Hey There", getProducts())
+
