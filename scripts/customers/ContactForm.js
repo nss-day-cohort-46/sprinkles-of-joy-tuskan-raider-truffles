@@ -2,7 +2,7 @@ const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".contactBox")
 
 
-const contactForm = () => {
+export const ContactForm = () => {
   return contentTarget.innerHTML = `
 <dialog open>  
   <form>
@@ -31,9 +31,10 @@ const contactForm = () => {
 // }
 
 eventHub.addEventListener("click", clickEvent => {
+  console.log("halp", clickEvent)
   if (clickEvent.target.id === "contactForm") {
     clickEvent.preventDefault()
-    // ContactForm()
+    ContactForm()
     console.log("Please hear me")
   //   const phoneNumber = document.querySelector("#phoneNumber").value
   //   const message = document.querySelector("message").value
