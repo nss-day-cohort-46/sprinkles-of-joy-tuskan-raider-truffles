@@ -4,7 +4,7 @@ import { customerLogin } from "./CustomerProvider.js"
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".form__login")
 
-let categories = []
+let customers = []
 
 export const LoginForm = () => {
   render()
@@ -33,8 +33,8 @@ const render = () => {
 eventHub.addEventListener("click", e => {
   if (e.target.id === "customerLogin") {
     e.preventDefault()
-    const loginEmail = document.querySelector(".login-email")
-    const loginPassword = document.querySelector(".login-password")
+    const loginEmail = document.querySelector("#login-email")
+    const loginPassword = document.querySelector("#login-password")
 
     customerLogin(loginEmail, loginPassword)
       .then(user => {

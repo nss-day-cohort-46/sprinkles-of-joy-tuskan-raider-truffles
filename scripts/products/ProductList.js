@@ -14,11 +14,12 @@ export const ProductList = () => {
     .then(() => {
       bakeryProducts = useProducts()
       bakeryCategories = useCategories()
-      render()
+      render(bakeryProducts, bakeryCategories)
+      
     })
 }
 
-const render = () => {
+const render = (bakeryProducts, bakeryCategories) => {
     const productArray = bakeryProducts.map(product => {
     const productCategory = bakeryCategories.find(category => category.id === product.categoryId)
     return Product(product, productCategory)
@@ -27,3 +28,18 @@ const render = () => {
 
   contentTarget.innerHTML = `${productArray}`
 }
+
+eventHub.addEventListener("categorySelected", event =>{
+  // debugger
+  getProducts()
+  .then(getCategories)
+  .then (()=> {
+    const chosenCategory = event.detail.selectedCategory
+    const products = useProducts()
+    const categories = useCategories()
+    
+    const productFilter = products.filter( product => product.categoryId === parseInt(chosenCategory))
+    const productCategory = categories.filter(category => category.id === parseInt(chosenCategory))
+    render(productFilter, productCategory)
+  })
+})
