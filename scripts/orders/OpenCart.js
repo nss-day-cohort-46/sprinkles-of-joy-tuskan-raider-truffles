@@ -66,8 +66,12 @@ eventHub.addEventListener("click", clickEvent => {
           "statusId": initialOrderStatus.id,
           "timestamp": Date.now()
         }
-
-        return saveOrder(newOrder, productsInCart)
+        // debugger
+        saveOrder(newOrder, productsInCart)
+        .then(()=> {
+        productsInCart = []
+        userCart.innerHTML = "<h2>Your order has been placed!</h2>"
+        })
       })
   }
 })
