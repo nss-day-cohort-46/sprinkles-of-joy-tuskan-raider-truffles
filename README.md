@@ -15,6 +15,8 @@ Add a pull request template for this project with these [instructions](https://d
 
 Your very first step is to create an Entity Relationship Diagram and get it approved by an instructor. Take a look at your database and use either dbdiagram.io or Lucidchart to build the ERD. Once your ERD has been approved, be sure to add a link to it in your README. If at any time during this project, your team needs to modify your ERD, please communicate the changes and get approval.
 
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/1f6a1d55-3453-4f19-9bf0-237a39262325" id="2Pgd9Ner.KgG"></iframe></div>
+
 ERD Link: https://lucid.app/lucidchart/1f6a1d55-3453-4f19-9bf0-237a39262325/edit?beaconFlowId=E51C177521862431&page=0_0#?folder_id=home&browser=icon
 
 ## A Note About Authentication
