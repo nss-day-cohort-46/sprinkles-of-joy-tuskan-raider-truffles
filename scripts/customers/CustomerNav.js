@@ -17,9 +17,9 @@ const render = (customer) => {
   userNav.innerHTML = `
     <h3>Welcome ${customer.name}!</h3>
     <ul class="userNav__links">
-    <li class="userNav__link" id="userNav--showCart">My Cart</li>
-    <li class="userNav__link" id="userNav--newReview">New Review</li>
-    <li class="userNav__link" id="userNav--pastOrders">Order History</li>
+    <li class="userNav__link" <a href="#" id="userNav--showCart">My Cart</a></li>
+    <li class="userNav__link" <a href="#" id="userNav--newReview">New Review</a></li>
+    <li class="userNav__link" <a href="#" id="userNav--pastOrders">Order History</a></li>
     </ul>
   `
 }
