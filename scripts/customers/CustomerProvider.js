@@ -21,3 +21,23 @@ export const customerLogin = (email, password) => {
     .then(res => res.json())
     .then(user => user.length ? user[0] : false)
 }
+
+export const saveContact = (note) => {
+  let stringifiedObj = JSON.stringify(note)
+  // debugger
+  return fetch('http://localhost:8088/contactInfo', {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: stringifiedObj
+  })
+  // .then(getCustomer) // fetch the notes collection containing the newly added note
+  // .then(dispatchStateChangeEvent) // tell any component listening that the notes state has been updated
+}
+
+// const dispatchStateChangeEvent = () => {
+//   const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+
+//   eventHub.dispatchEvent(noteStateChangedEvent)
+// }
