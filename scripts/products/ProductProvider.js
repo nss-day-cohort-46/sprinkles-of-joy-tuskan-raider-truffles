@@ -2,7 +2,9 @@ import { bakeryAPI } from "../Settings.js"
 
 let products = []
 
-export const useProducts = () => products.slice()
+export const useProducts = () => {
+  products.slice()
+}
 
 export const getProducts = () => {
   return fetch(`${bakeryAPI.baseURL}/products`)
@@ -10,5 +12,6 @@ export const getProducts = () => {
     .then(bakedGoods => {
       products = bakedGoods
     })
+   
 }
 

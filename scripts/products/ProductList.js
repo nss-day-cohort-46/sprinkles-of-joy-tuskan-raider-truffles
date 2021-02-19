@@ -7,24 +7,21 @@ const contentTarget = document.querySelector(".menu__items")
 
 let bakeryProducts = []
 let bakeryCategories = []
-
 export const ProductList = () => {
   // debugger
   getProducts()
-  // console.log("gp", getProducts())
-  .then(getCategories)
-  .then(() => {
-    bakeryProducts = useProducts()
-    bakeryCategories = useCategories()
-  })
-  render()
+    .then(getCategories)
+    .then(() => {
+      bakeryProducts = useProducts()
+      bakeryCategories = useCategories()
+    })
+    render()
 }
 
 const render = () => {
   contentTarget.innerHTML = bakeryProducts.map(product => {
-    const productCategory = bakeryCategories.find(category => cat.id === product.categoryId)
+    const productCategory = bakeryCategories.find(category => category.id === product.categoryId)
 
     return Product(product, productCategory)
   }).join("")
 }
-
