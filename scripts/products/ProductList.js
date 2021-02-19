@@ -14,14 +14,16 @@ export const ProductList = () => {
     .then(() => {
       bakeryProducts = useProducts()
       bakeryCategories = useCategories()
+      render()
     })
-    render()
 }
 
 const render = () => {
-  contentTarget.innerHTML = bakeryProducts.map(product => {
+    const productArray = bakeryProducts.map(product => {
     const productCategory = bakeryCategories.find(category => category.id === product.categoryId)
-
     return Product(product, productCategory)
+
   }).join("")
+
+  contentTarget.innerHTML = `${productArray}`
 }
