@@ -1,17 +1,29 @@
+import { getProducts, useProducts } from "../products/ProductProvider.js"
 import { saveReview } from "./ReviewProvider.js"
 
 const contentTarget = document.querySelector(".userCart")
 const eventHub = document.querySelector("#container")
 
 export const ReviewForm = () => {
-    console.log("got to here")
+    // console.log("got to here")
+    let bakeryProducts = []
+    getProducts()
+      .then(() => {
+        bakeryProducts = useProducts()
+        render()
+        
+      })
+const render = () => {
    contentTarget.innerHTML =  ` 
         <form>
             <fieldset><legend>Review:</legend>
             <label for="dateOf">Date</label>
             <input type="date" name="reviewDate" id="reviewDate"></input><br>
             <label for="productReview">Product:</label><br>
-            <input type="text" name="productReview" id="productReview"></input><br>
+            <select class="productDropdown" id="productSelect">
+                <option value="0">Select Product to Review...</option>
+                ${bakeryProducts.map(product =>`<option value="${product.id}">${product.name}</option>`)}
+            </select>
             <fieldset class="rating">
                 <legend>Please rate:</legend>
                 <input type="radio" id="star1" name="rating" value="1" />
@@ -32,20 +44,20 @@ export const ReviewForm = () => {
         </form>
   `
 }
-
+}
 eventHub.addEventListener("click", event => {
     if (event.target.id === "submitReview") {
         event.preventDefault()
         // console.log("click")
         const date = document.querySelector("#reviewDate").value
-        const product = document.querySelector("#productReview").value
-        const rating = document.querySelectorAll("radio").value
+        const productId = document.querySelector("#productSelect").value
+        const rating = document.querySelector("input[name=rating]:checked").value
         const review = document.querySelector("#reviewMessage").value
         
         
             const newReview = {
                 "date": date,
-                "product": product,
+                "productId": productId,
                 "rating": rating,
                 "message": review
         

@@ -5,7 +5,7 @@ const eventHub = document.querySelector("#container")
 
 eventHub.addEventListener("showNewReviewForm", customEvent => {
     customEvent.preventDefault()
-    console.log("heard")
+    // console.log("heard")
     ReviewForm()
 })
 
