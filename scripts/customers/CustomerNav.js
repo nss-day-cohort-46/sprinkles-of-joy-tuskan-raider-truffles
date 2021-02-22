@@ -1,8 +1,13 @@
 import { authHelper } from "../auth/authHelper.js"
 import { getCustomer } from "../customers/CustomerProvider.js"
+import { LoginForm } from "./LoginForm.js"
+
+
 
 const eventHub = document.querySelector("#container")
 const userNav = document.querySelector(".userNav")
+const logoutTarget = document.querySelector(".form__logout")
+
 
 export const CustomerNav = () => {
   if (authHelper.isUserLoggedIn()) {
@@ -21,6 +26,8 @@ const render = (customer) => {
     <li class="userNav__link" <a href="#" id="userNav--newReview">New Review</a></li>
     <li class="userNav__link" <a href="#" id="userNav--pastOrders">Order History</a></li>
     </ul>
+
+    <button id="customerLogout">Logout</button>
   `
 }
 
@@ -44,5 +51,16 @@ eventHub.addEventListener("click", event => {
         break;
     }
     eventHub.dispatchEvent(customEvent)
+  }
+})
+
+
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id === "customerLogout") {
+    authHelper.clearUserSession("")
+    logoutTarget.innerHTML = ""
+    userNav.innerHTML = ""
+    LoginForm()
   }
 })
