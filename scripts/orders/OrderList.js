@@ -1,23 +1,45 @@
 import { authHelper } from "../auth/authHelper.js"
-import { getCustomer } from "../customers/CustomerProvider.js"
+// import { getCustomer } from "../customers/CustomerProvider.js"
+import { getProducts, useProducts } from "../products/ProductProvider.js"
 import { Order } from "./Order.js"
+import { getOrderProducts, useOrderProducts } from "./OrderProductProvider.js"
 import { getOrders, useOrders } from "./OrderProvider.js"
+
+getOrderProducts()
 
 const eventHub = document.querySelector("#container")
 const contentContainer = document.querySelector(".userOrders")
 
 let customerOrders = []
+let customerProduts = []
+let customerOP = []
 
 export const OrderList = () => {
-  if (authHelper.isUserLoggedIn()) {
-
-    getOrders()
+  // if (authHelper.isUserLoggedIn()) {
+  if (authHelper.getCurrentUserId()) {
+     (getOrders())
+      .then(getProducts)
+      .then(getOrderProducts)
       .then(() => {
         customerOrders = useOrders()
+        customerProduts = useProducts()
+        customerOP = useOrderProducts()
+        debugger
+        customerOrders = customerOrders.filter(order =>order.id === authHelper.getCurrentUserId())
+        console.log("Yum", customerOrders)
+        // CustomerOrderHistory = customerOrders1.map()
         render()
       })
+
+      }
   }
-}
+
+// const renderToDom = (orderCollection) => {
+  
+//   for (const order of orderCollection) {
+//   const orderRelationship = orderProductsJoinTable.filter(orderProducts => orders.customerId === customerOrders.customerId)
+//   }
+// }
 
 const render = () => {
   const ordersHtmlRepresentation = customerOrders.map(order => Order(order)).join("")
