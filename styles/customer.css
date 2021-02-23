@@ -1,8 +1,12 @@
-.userNav__links {
+.userNav__link {
   display: flex;
   list-style: none;
   text-decoration: underline;
+  cursor: pointer;
   justify-content: space-around;
+}
+.userNav__link:hover {
+background-color: bisque;
 }
 
 .customerSection {
