@@ -7,7 +7,7 @@ const contentTarget = document.querySelector(".contactBox")
 export const ContactForm = () => {
   return contentTarget.innerHTML = `
 <dialog open>  
-  <form>
+  <form class="contact_form">
       <fieldset>
         <label for="dateOf">Date</label>
         <input type="date" name="noteDate" id="noteDate"></input>
@@ -25,7 +25,7 @@ export const ContactForm = () => {
         <input type="int" name="phoneNumber" id="phoneNumber"></input>
 
         <label for="entryNotes">Message</label>
-        <input type="text" name="message" id="message"></input>
+        <textarea name="message" id="message"></textarea>
 
        
     </fieldset>    
@@ -35,9 +35,7 @@ export const ContactForm = () => {
         `
 }
 
-// const ContactForm = () => {
-//   render()
-// }
+
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "contactForm") {
