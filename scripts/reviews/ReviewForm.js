@@ -1,3 +1,4 @@
+import { authHelper } from "../auth/authHelper.js"
 import { getProducts, useProducts } from "../products/ProductProvider.js"
 import { saveReview } from "./ReviewProvider.js"
 
@@ -53,14 +54,14 @@ eventHub.addEventListener("click", event => {
         const productId = document.querySelector("#productSelect").value
         const rating = document.querySelector("input[name=rating]:checked").value
         const review = document.querySelector("#reviewMessage").value
-        
-        
+        const authUserId = authHelper.getCurrentUserId()
+
             const newReview = {
                 "date": date,
                 "productId": productId,
                 "rating": rating,
-                "message": review
-        
+                "message": review,
+                "customerId": parseInt(authUserId)
               }
               saveReview(newReview)
             //   .then(contentTarget.innerHTML = "")

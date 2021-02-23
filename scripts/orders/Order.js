@@ -1,8 +1,9 @@
-export const Order = (customerOrder) => {
+export const Order = (customerOrder, filteredProd) => {
   return `
     <div class="order">
       <p>${new Date(customerOrder.timestamp).toLocaleString('en-US')}</p>
       <p>${customerOrder.status.label}</p>
-    </div>
+      <p>${filteredProd.name}</p>
+      </div>
   `
 }

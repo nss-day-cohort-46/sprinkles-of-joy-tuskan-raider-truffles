@@ -59,26 +59,6 @@ eventHub.addEventListener("click", e => {
 })
 
 eventHub.addEventListener("showLoginForm", LoginForm)
-// eventHub.addEventListener("logoutClicked", LoginForm)
 
-// eventHub.addEventListener("logoutClicked", customEvent => {
-// // //  LoginForm()
-//  logoutTarget.innerHTML = `
-//  <h3>Login</h3>
-//  <p>Don't have an account? Click <a href="#" id="link__register">here</a> to register.</p>
-//  <form>
-//    <fieldset>
-//      <label for="login-email">Email: </label>
-//      <input type="text" id="login-email" name="login-email">
-//    </fieldset>
-//    <fieldset>
-//      <label for="login-password">Password: </label>
-//      <input type="password" id="login-password" name="login-password">
-//    </fieldset>
-//    <button id="customerLogin">Login</button>
-//  </form>
-// `
-// console.log("HearME")
-// })
 
 

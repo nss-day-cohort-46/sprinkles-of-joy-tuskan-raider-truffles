@@ -7,6 +7,7 @@ import { LoginForm } from "./LoginForm.js"
 const eventHub = document.querySelector("#container")
 const userNav = document.querySelector(".userNav")
 const logoutTarget = document.querySelector(".form__logout")
+const userCart = document.querySelector(".userCart")
 
 
 export const CustomerNav = () => {
@@ -61,6 +62,7 @@ eventHub.addEventListener("click", clickEvent => {
     authHelper.clearUserSession("")
     logoutTarget.innerHTML = ""
     userNav.innerHTML = ""
+    userCart.innerHTML = ""
     LoginForm()
   }
 })
